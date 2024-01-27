@@ -1,14 +1,15 @@
 import { useState } from "react";
 
-const stepItems = ["Dream", "Believe", "Achieve"];
+const stepItems = ["Dream", "Believe", "Achie"];
 function App() {
     const [step, setStep] = useState(1);
+
     function handleNext() {
-        if (step < 3) setStep(step + 1);
+        if (step < 3) setStep((step) => step + 1);
     }
 
     function handlePrev() {
-        if (step > 1) setStep(step - 1);
+        if (step < 3) setStep((step) => step - 1);
     }
 
     return (
@@ -18,7 +19,9 @@ function App() {
                 <div className={step >= 2 ? "active" : ""}>2</div>
                 <div className={step >= 3 ? "active" : ""}>3</div>
             </div>
-            <p className="message">Step {step}: </p>
+            <p className="message">
+                Step {step}: {stepItems[step - 1]}{" "}
+            </p>
             <div className="buttons">
                 <button
                     style={{ backgroundColor: "#526D82", color: "#FFF" }}
