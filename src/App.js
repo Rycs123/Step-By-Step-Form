@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const stepItems = ["Dream", "Believe", "Achie"];
+const stepItems = ["Dream", "Believe", "Achieve"];
 function App() {
     const [step, setStep] = useState(1);
     const [isOpen, setIsOpen] = useState(true);
